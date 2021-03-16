@@ -10,11 +10,21 @@ class BurgerController extends Controller
     public function list() {
         
         $breads = Ingredient::inRandomOrder()->where('type' , '=', 'bread')->limit(1)->get();
+        $meatFishEggs = Ingredient::inRandomOrder()->where('type' , '=', 'mfe')->limit(rand(1,2))->get();
+        $vegetables = Ingredient::inRandomOrder()->where('type' , '=', 'vegetable')->limit(1)->get();
+        $sauces = Ingredient::inRandomOrder()->where('type' , '=', 'sauce')->limit(1)->get();
+        $cheeses = Ingredient::inRandomOrder()->where('type' , '=', 'cheese')->limit(rand(1,2))->get();
+        $extras = Ingredient::inRandomOrder()->where('type' , '=', 'extra')->limit(1)->get();
+        
         $ingredients = Ingredient::inRandomOrder()->limit(2)->get();
         
         return view('create.index', [
             'breads' => $breads,
-            'ingredients' => $ingredients
+            'meatfisheggs' => $meatFishEggs,
+            'vegetables' => $vegetables,
+            'sauces' => $sauces,
+            'cheeses' => $cheeses,
+            'extras' => $extras,
         ]);
     }
 
