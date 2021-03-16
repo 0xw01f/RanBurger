@@ -10,12 +10,12 @@
             <label for="email" class="text-md-right">{{ __('E-Mail Address') }}</label>
 
             <div class="mb-3">
-                <input id="email" type="email" class="px-8 py-4 rounded-md form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input id="email" type="email" class="px-8 py-4 rounded-md form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
 
                 @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                    <div class="invalid-feedback" role="alert">
+                        <div class="text-red-500"><i class="fa fa-exclamation-triangle"></i> {{ $message}}</div>
+                    </div>
                 @enderror
             </div>
 
@@ -23,17 +23,17 @@
             <label for="password" class="text-md-right">{{ __('Password') }}</label>
 
             <div class="col-md-6">
-                <input id="password" type="password" class="px-8 py-4 rounded-md form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <input id="password" type="password" class="px-8 py-4 rounded-md form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
 
                 @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                    <div class="invalid-feedback" role="alert">
+                        <div class="text-red-500"><i class="fa fa-exclamation-triangle"></i> {{ $message}}</div>
+                    </div>
                 @enderror
             </div>
 
 
-            <div class="pt-2">
+            {{-- <div class="pt-2">
                 <div class="col-md-6 offset-md-4">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -43,13 +43,18 @@
                         </label>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="mt-4">
                 
                 <button type="submit" class="mt-1 px-8 py-3 my-2 bg-yellow-400  text-white font-bold tracking-wide shadow hover:bg-yellow-500 hover:shadow-md rounded-md">
                     {{ __('Login') }}
                 </button>
+                
+                or
+                <a href="/register" class="mt-1 px-5 py-3 my-2 bg-yellow-300 text-white font-bold tracking-wide shadow hover:bg-yellow-500 hover:shadow-md rounded-md">
+                    {{ __('Create an account') }}
+                </a>
             
                 <div></div>
 

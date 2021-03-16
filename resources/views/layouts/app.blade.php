@@ -37,7 +37,7 @@
                     <a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/">Home</a>
                   </li>
                   
-                  <li @if (Route::is('clients')) class="shadow rounded-lg" @endif><a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/create">Create</a></li>
+                  <li @if (Route::is('create')) class="shadow rounded-lg" @endif><a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/create">Create</a></li>
                   
                   <li @if (Route::is('about')) class="shadow rounded-lg" @endif><a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/about">About</a></li>
                   <li @if (Route::is('contact')) class="shadow rounded-lg" @endif><a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/contact">Contact</a></li>
@@ -46,36 +46,35 @@
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
+                            <li @if (Route::is('login')) class="shadow rounded-lg" @endif>
                                 <a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
                         
                         @if (Route::has('register'))
-                            <li class="nav-item">
+                            <li @if (Route::is('register')) class="shadow rounded-lg" @endif>
                                 <a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
                         <li class="dropdown">
-                            <a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="#">
+                            <a href="/profile/{{ Auth::user()->name}}-{{ Auth::user()->id }}" class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="#">
                                 {{ Auth::user()->name }}
                             </a>
   
                             
-                
-                            <div class="dropdown-content hidden absolute rounded-md p-3 hover:text-yellow-600 hover:shadow-md">
+                            {{-- <div class="dropdown-content hidden absolute rounded-md p-3 mt-10 hover:text-yellow-600 hover:shadow-md">
+                              <a href="/profile/{{ Auth::user()->name}}-{{ Auth::user()->id }}">My profile</a>
+                            </div> --}}
+                            
+                            <div class="dropdown-content hidden absolute rounded-md p-3 px-5 bg-yellow-200 bg-opacity-60 hover:text-yellow-600 hover:shadow-md">
                               <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                               </a>
                             </div>
-                            
 
-                            <div class="dropdown-content hidden absolute rounded-md p-3 mt-10 hover:text-yellow-600 hover:shadow-md">
-                              <a href="/profile/{{ Auth::user()->name}}-{{ Auth::user()->id }}">My profile</a>
-                            </div>
                     
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
@@ -110,11 +109,12 @@
               <i class="fa fa-plus fa-3x"></i>
               <span class="pt-1">Create</span>
             </a>
+            
        
 
-            <a href="/login" class="flex-1 mr-8 py-3 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full">
+            <a href="@if (Auth::check()) /profile/{{ Auth::user()->name}}-{{ Auth::user()->id }} @else /login @endif" class="flex-1 mr-8 py-3 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full">
               <i class="fa fa-user fa-3x"></i>
-              <span class="pt-1">Account</span>
+              <span class="pt-1">{{ Auth::user()->name ?? 'Login'}}</span>
             </a>
           </nav>
 

@@ -17,7 +17,8 @@ class CreateIngredientsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
-            $table->string('price');
+            $table->decimal('price');
+            $table->boolean('veggie')->default('false');
             $table->timestamps();
         });
     }
