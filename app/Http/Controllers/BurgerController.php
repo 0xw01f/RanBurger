@@ -11,7 +11,7 @@ class BurgerController extends Controller
         
         $breads = Ingredient::inRandomOrder()->where('type' , '=', 'bread')->limit(1)->get();
         $meatFishEggs = Ingredient::inRandomOrder()->where('type' , '=', 'mfe')->limit(rand(1,2))->get();
-        $vegetables = Ingredient::inRandomOrder()->where('type' , '=', 'vegetable')->limit(1)->get();
+        $vegetables = Ingredient::inRandomOrder()->where('type' , '=', 'vegetable')->limit(rand(1,3))->get();
         $sauces = Ingredient::inRandomOrder()->where('type' , '=', 'sauce')->limit(1)->get();
         $cheeses = Ingredient::inRandomOrder()->where('type' , '=', 'cheese')->limit(rand(1,2))->get();
         $extras = Ingredient::inRandomOrder()->where('type' , '=', 'extra')->limit(1)->get();

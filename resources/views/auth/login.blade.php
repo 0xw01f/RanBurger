@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="md:flex items-center justify-center md:h-screen content-center mx-auto">
+    <div class="md:flex items-center  justify-center md:h-screen content-center mx-auto">
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
