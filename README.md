@@ -7,6 +7,9 @@ hehehe~
 
 ## About RanBurger
 
-RandBurger exists because.
+RandBurger exists because. Just because.
+
+![Homepage](https://i.imgur.com/Hgh8USG.png)
+Homepage.
 
 Have a nice day.
