@@ -12,26 +12,30 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <style>
+          .curvy-text {
+            font-family: 'Bad Script', cursive;
+          }
 
-          
           .dropdown:hover .dropdown-content {
             display: block;
           }
-          </style>
+        </style>
 
     </head>
     <body class="bg-yellow-100">
 
           <nav class="hidden fixed w-screen lg:px-40 sm:px-10 px-2 sm:flex justify-between items-center">
-              <div class="flex items-center mx-5 py-5 md:py-0">
+              <a href="/"><div class="flex items-center mx-5 py-5 md:py-0 curvy-text font-bold">
                 <img src="/images/burger.svg" alt="Burger" class="h-11">
-                <h1 class="text-2xl ml-6 inline-block">RanBurger</h1>
-              </div>
+                <h1 class="text-4xl ml-6 inline-block">RanBurger</h1>
+              </div></a>
               <div class="md:flex md:flex-grow">
                 <ul class="text-lg md:flex md:ml-auto ">
                   <li @if (Route::is('home')) class="shadow rounded-lg" @endif>
@@ -41,7 +45,6 @@
                   <li @if (Route::is('create')) class="shadow rounded-lg" @endif><a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/create">Create</a></li>
                   
                   <li @if (Route::is('about')) class="shadow rounded-lg" @endif><a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/about">About</a></li>
-                  <li @if (Route::is('contact')) class="shadow rounded-lg" @endif><a class="w-full md:w-auto p-5 inline-block rounded-lg hover:shadow hover:bg-yellow-200" href="/contact">Contact</a></li>
                  
                   <!-- Right Side Of Navbar -->
                         <!-- Authentication Links -->
@@ -89,7 +92,7 @@
           </nav>
 
 
-          <header class='container flex flex-col-reverse sm:flex-row pt-28 md:pt-0 mx-auto max-w-screen-lg'>
+          <header class='container flex flex-col-reverse sm:flex-row md:pt-0 mx-auto max-w-screen-lg'>
               
             @yield('content')
 

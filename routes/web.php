@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','welcome')->name('home');
+Route::view('/','welcome')->name('welcome');
+Route::get('/', [App\Http\Controllers\BurgerController::class, 'stats']);
 
-Route::view('/contact','contact')->name('contact');
 // Quand le chemin /about est demandé on affiche la page about
 Route::view('/about','about')->name('about');
 
@@ -29,3 +29,4 @@ Route::post('/create', [App\Http\Controllers\BurgerController::class, 'store']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/create/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');

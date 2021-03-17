@@ -16,7 +16,14 @@ class BurgerController extends Controller
         $cheeses = Ingredient::inRandomOrder()->where('type' , '=', 'cheese')->limit(rand(1,2))->get();
         $extras = Ingredient::inRandomOrder()->where('type' , '=', 'extra')->limit(1)->get();
         
-        $ingredients = Ingredient::inRandomOrder()->limit(2)->get();
+        $ingredients = [
+            $breads,
+            $extras,
+            $vegetables,
+            $cheeses,
+            $meatFishEggs,
+            $sauces,
+        ];
         
         return view('create.index', [
             'breads' => $breads,
@@ -25,7 +32,19 @@ class BurgerController extends Controller
             'sauces' => $sauces,
             'cheeses' => $cheeses,
             'extras' => $extras,
+            'ingredients' => $ingredients,
         ]);
+    }
+
+    public function stats() {
+
+        $ingredientsCount = Ingredient::count();
+
+        return view('welcome', [
+            'ingredientsCount' => $ingredientsCount,
+        
+        ]);
+
     }
 
     public function store() {
@@ -33,7 +52,7 @@ class BurgerController extends Controller
         request()->validate([
             'name' => 'required|min:2|max:25',
             'type' => 'required|min:2|max:15',
-            'price' => 'required|max:50|numeric|regex:(\d+\.?\d{1,2})',
+            'price' => 'required|max:50|numeric|regex:(\d*\.?\d{1,2})',
             'veggie' => 'boolean',
         ]);
 
