@@ -25,14 +25,14 @@
 
     <div class="absolute text-center bottom-40 flex flex-row">
 
-      <div class="relative static px-32 border-r border-gray-600">
-        <h1 class="text-5xl font-thin">{{ $ingredientsCount }}</h1>
-        <h2 class="text-2xl font-thin">Available ingredients</h2>
+      <div class="relative static px-6 md:px-32 border-r border-gray-600">
+        <h1 class="text-2xl md:text-5xl font-thin">{{ $ingredientsCount }}</h1>
+        <h2 class="text-xl md:text-2xl font-thin">Available ingredients</h2>
       </div>
 
-      <div class="relative static px-32 border-l border-gray-600">
-        <h1 class="text-5xl font-thin">75</h1>
-        <h2 class="text-2xl font-thin">Burgers created</h2>
+      <div class="relative static px-6 md:px-32 border-l border-gray-600">
+        <h1 class="text-2xl md:text-5xl font-thin">75</h1>
+        <h2 class="text-xl md:text-2xl font-thin">Burgers created</h2>
       </div>
       
     </div>

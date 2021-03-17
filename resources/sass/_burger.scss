@@ -1,0 +1,61 @@
+
+
+div#bread-t {
+    content: url(https://i.ibb.co/992LcD6/breadTop.png);
+    padding: 0.75rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+    margin-top: -0em;
+    width: 32rem;
+    transform: translateX(-4%) translateY(4.5em);
+
+}
+
+div#bread-b {
+    content: url(https://i.ibb.co/7bGBXdT/bread-Bottom.png);
+    margin-top: -0.8em;
+    width: 32rem;
+    transform: translateX(-4%);
+}
+
+div#extra {
+    content: url(https://i.ibb.co/h1VXYsy/Onions.png);
+    max-height: 40px;
+    margin-top: -0.8em;
+    width: 30rem;
+    transform: translateX(-4%);
+}
+
+div#vegetable {
+    content:url(https://i.ibb.co/tDHh7hH/salad.png);
+    max-height: 35px;
+    margin-top: -0.8em;
+    width: 32rem;
+    transform: translateX(-4%);
+}
+
+div#cheese {
+    content: url(https://i.ibb.co/7psnHXw/Cheese.png);
+    max-height: 30px;
+    margin-top: -0.8em;
+    width: 32rem;
+    transform: translateX(-4%);
+}
+
+div#mfe {
+    content: url(https://i.ibb.co/PzDFqGL/Steak.png);
+    max-height: 65px;
+    margin-top: -0.8em;
+    width: 32rem;
+    transform: translateX(-4%);
+}
+
+div#sauce {
+    content: url(https://i.ibb.co/8PsVF5d/sauce.png);
+    max-height: 30px;
+    margin-top: -0.8em;
+    width: 30rem;
+    transform: translateX(-4%);
+}

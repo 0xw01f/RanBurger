@@ -19,9 +19,7 @@ Route::get('/', [App\Http\Controllers\BurgerController::class, 'stats']);
 // Quand le chemin /about est demandé on affiche la page about
 Route::view('/about','about')->name('about');
 
-// Appeller la fonction list de ClientsController
-Route::get('/clients', [App\Http\Controllers\ClientsController::class, 'list'])->name('clients');
-
+// Appeller la fonction list de BurgerController
 Route::get('/create', [App\Http\Controllers\BurgerController::class, 'list'])->name('create');
 
 //  For a POST form
@@ -30,3 +28,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+
+Route::post('update/', [App\Http\Controllers\BurgerController::class, 'update']);
+   

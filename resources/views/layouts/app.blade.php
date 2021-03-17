@@ -6,6 +6,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -92,7 +93,7 @@
           </nav>
 
 
-          <header class='container flex flex-col-reverse sm:flex-row md:pt-0 mx-auto max-w-screen-lg'>
+          <header class='container flex flex-col-reverse sm:flex-row md:pt-14 mx-auto max-w-screen-lg'>
               
             @yield('content')
 
@@ -121,6 +122,6 @@
               <span class="pt-1">{{ Auth::user()->name ?? 'Login'}}</span>
             </a>
           </nav>
-
+          
     </body>
 </html>
