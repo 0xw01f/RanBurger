@@ -9,7 +9,10 @@ hehehe~
 
 RandBurger exists because. Just because.
 
-![Homepage](https://i.imgur.com/Hgh8USG.png)
+![Homepage](https://i.imgur.com/A9QbqV6.png)
 Homepage.
+
+![Burger generator](https://i.imgur.com/RydK5Yd.png)
+Current burger generator
 
 Have a nice day.
