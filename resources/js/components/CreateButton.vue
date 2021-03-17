@@ -56,13 +56,14 @@
                      } else {
                         let type = obj[key][0].type;
                         let name = obj[key][0].name;
-                        if (type == 'bread') {
-                            continue;
-                        }
 
                         let txt = document.createElement("p");   
                         txt.innerHTML = '- ' + name;                   
                         document.getElementById(type).appendChild(txt);
+
+                        if (type == 'bread') {
+                            continue;
+                        }
 
                          let div = document.createElement("div");
                         div.setAttribute('id', type);

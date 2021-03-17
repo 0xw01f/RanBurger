@@ -1898,14 +1898,14 @@ __webpack_require__.r(__webpack_exports__);
             var _type = obj[key][0].type;
             var _name = obj[key][0].name;
 
-            if (_type == 'bread') {
-              continue;
-            }
-
             var _txt = document.createElement("p");
 
             _txt.innerHTML = '- ' + _name;
             document.getElementById(_type).appendChild(_txt);
+
+            if (_type == 'bread') {
+              continue;
+            }
 
             var _div = document.createElement("div");
 

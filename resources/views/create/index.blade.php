@@ -56,47 +56,19 @@
               
     </div>
 
-
-
-
     <div class='flex md:items-center mt-10 mb-32'>
-
-        <div id="burger-container" class="text-center text-md md:margin-auto">
-        
-
-
-                <div id="bread-t" class="rounded-t-full"></div>
-            
-                @foreach ($extras as $extra)
-                    <div id="extra"></div>
-                @endforeach
-
-                @foreach ($vegetables as $vegetable)
-                    <div id="vegetable"></div>
-                @endforeach
-
-                @foreach ($cheeses as $cheese)
-                    <div id="cheese"></div>
-                @endforeach
-
-                @foreach ($meatfisheggs as $mfe)
-                    <div id="mfe"></div>
-                @endforeach
-
-                @foreach ($sauces as $sauce)
-                    <div id="sauce"></div>
-                @endforeach
-
+        <div id="burger-container" class="text-center text-md md:margin-auto ml-72">
+            <div id="bread-t"></div>
+                <div id="extra"></div>
+                <div id="vegetable"></div>
+                <div id="vegetable"></div>
+                <div id="cheese"></div>
+                <div id="mfe"></div>
+                <div id="sauce"></div>
             <div id="bread-b"></div>
-          
         </div>
-
-
     </div>
 
-
-
-    
 </div>
 
 </div>
