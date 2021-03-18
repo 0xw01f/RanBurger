@@ -30,13 +30,15 @@
         </style>
 
     </head>
-    <body class="bg-yellow-100">
+    <body class="bg-yellow-100 noselect">
 
           <nav class="hidden fixed w-screen lg:px-40 sm:px-10 px-2 sm:flex justify-between items-center">
+
               <a href="/"><div class="flex items-center mx-5 py-5 md:py-0 curvy-text font-bold">
                 <img src="/images/burger.svg" alt="Burger" class="h-11">
                 <h1 class="text-4xl ml-6 inline-block">RanBurger</h1>
               </div></a>
+
               <div class="md:flex md:flex-grow">
                 <ul class="text-lg md:flex md:ml-auto ">
                   <li @if (Route::is('home')) class="shadow rounded-lg" @endif>
@@ -100,25 +102,25 @@
           </header>
 
           </div>
-          <nav class="md:hidden p-1 shadow-inner bottom-0 fixed w-screen flex flex-row justify-center -mb-px text-xs text-gray-600 bg-yellow-300 font-bold text-center">
+          <nav class="md:hidden p-1 shadow-inner bottom-0 fixed w-full flex flex-row justify-center -mb-px text-xs text-gray-600 bg-yellow-300 font-bold text-center">
             
   
-            <a href="/" class="flex-1 mr-8 py-3 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full">
-              <i class="fa fa-home fa-3x"></i>
+            <a href="/" class="flex-1 mr-8 py-2 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full">
+              <i class="fa fa-home fa-2x"></i>
               <span class="pt-1">Home</span>
             </a>
    
 
             
-            <a href="/create" class="flex-1 mr-8 py-3 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full shadow-md">
-              <i class="fa fa-plus fa-3x"></i>
+            <a href="/create" class="flex-1 mr-8 py-2 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full shadow-md">
+              <i class="fa fa-plus fa-2x"></i>
               <span class="pt-1">Create</span>
             </a>
             
        
 
-            <a href="@if (Auth::check()) /profile/{{ Auth::user()->name}}-{{ Auth::user()->id }} @else /login @endif" class="flex-1 mr-8 py-3 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full">
-              <i class="fa fa-user fa-3x"></i>
+            <a href="@if (Auth::check()) /profile/{{ Auth::user()->name}}-{{ Auth::user()->id }} @else /login @endif" class="flex-1 mr-8 py-2 no-underline border-b-2 border-transparent tracking-wide flex flex-col rounded-full">
+              <i class="fa fa-user fa-2x"></i>
               <span class="pt-1">{{ Auth::user()->name ?? 'Login'}}</span>
             </a>
           </nav>

@@ -4,21 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class BurgerController extends Controller
 {
 
-    public function update() {
-
+    public function update($isVeggie) {
 
         // Maybe improve this mess with a __construct ??...
+        
+        // If = 1
+        if($isVeggie) {
+            $breads = Ingredient::inRandomOrder()->where('type' , '=', 'bread')->where('veggie' , '=', '1')->limit(1)->get();
+            $meatFishEggs = Ingredient::inRandomOrder()->where('type' , '=', 'mfe')->where('veggie' , '=', '1')->limit(rand(1,2))->get();
+            $vegetables = Ingredient::inRandomOrder()->where('type' , '=', 'vegetable')->where('veggie' , '=', '1')->limit(rand(1,3))->get();
+            $sauces = Ingredient::inRandomOrder()->where('type' , '=', 'sauce')->where('veggie' , '=', '1')->limit(1)->get();
+            $cheeses = Ingredient::inRandomOrder()->where('type' , '=', 'cheese')->where('veggie' , '=', '1')->limit(rand(1,2))->get();
+            $extras = Ingredient::inRandomOrder()->where('type' , '=', 'extra')->where('veggie' , '=', '1')->limit(1)->get();
+        } else {
+            $breads = Ingredient::inRandomOrder()->where('type' , '=', 'bread')->limit(1)->get();
+            $meatFishEggs = Ingredient::inRandomOrder()->where('type' , '=', 'mfe')->limit(rand(1,2))->get();
+            $vegetables = Ingredient::inRandomOrder()->where('type' , '=', 'vegetable')->limit(rand(1,3))->get();
+            $sauces = Ingredient::inRandomOrder()->where('type' , '=', 'sauce')->limit(1)->get();
+            $cheeses = Ingredient::inRandomOrder()->where('type' , '=', 'cheese')->limit(rand(1,2))->get();
+            $extras = Ingredient::inRandomOrder()->where('type' , '=', 'extra')->limit(1)->get();
+        }
          
-        $breads = Ingredient::inRandomOrder()->where('type' , '=', 'bread')->limit(1)->get();
-        $meatFishEggs = Ingredient::inRandomOrder()->where('type' , '=', 'mfe')->limit(rand(1,2))->get();
-        $vegetables = Ingredient::inRandomOrder()->where('type' , '=', 'vegetable')->limit(rand(1,3))->get();
-        $sauces = Ingredient::inRandomOrder()->where('type' , '=', 'sauce')->limit(1)->get();
-        $cheeses = Ingredient::inRandomOrder()->where('type' , '=', 'cheese')->limit(rand(1,2))->get();
-        $extras = Ingredient::inRandomOrder()->where('type' , '=', 'extra')->limit(1)->get();
+
         
         $ingredients = [
             $breads,

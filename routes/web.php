@@ -29,5 +29,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 
-Route::post('update/', [App\Http\Controllers\BurgerController::class, 'update']);
+Route::post('create/{isVeggie}', [App\Http\Controllers\BurgerController::class, 'update']);
    

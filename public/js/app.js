@@ -1857,7 +1857,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     createBurger: function createBurger() {
-      axios.post('/update/').then(function (res) {
+      // Check if veggie is checked
+      // Set parameter to 0 if not veggie and 1 if yes
+      var isVeggie = 0;
+
+      if (document.getElementById('veggie').checked) {
+        isVeggie = 1;
+      } else {
+        isVeggie = 0;
+      }
+
+      axios.post('/create/' + isVeggie).then(function (res) {
         var obj = res.data;
         var burgerContainer = document.getElementById('burger-container');
         var types = ['bread', 'extra', 'vegetable', 'cheese', 'mfe', 'sauce'];

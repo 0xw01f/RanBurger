@@ -12,12 +12,25 @@
 
         methods: {
             createBurger() {
-                axios.post('/update/')
+
+                // Check if veggie is checked
+                // Set parameter to 0 if not veggie and 1 if yes
+                let isVeggie = 0;
+                if (document.getElementById('veggie').checked){
+                    isVeggie = 1;
+                } else {
+                    isVeggie = 0;
+                }
+
+            
+                axios.post('/create/' + isVeggie)
                 .then(res => {
+
                     let obj = res.data;
                     let burgerContainer = document.getElementById('burger-container');
 
                     let types = ['bread', 'extra', 'vegetable', 'cheese', 'mfe', 'sauce'];
+
 
                     for (const i in types) {
                         let element = document.getElementById(types[i])

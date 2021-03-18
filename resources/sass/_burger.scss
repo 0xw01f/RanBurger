@@ -1,14 +1,26 @@
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
 
+.commands {
+
+}
 
 div#bread-t {
     content: url(https://i.ibb.co/992LcD6/breadTop.png);
     padding: 0.75rem;
-    padding-top: 4rem;
+
     padding-bottom: 4rem;
     border-top-left-radius: 9999px;
     border-top-right-radius: 9999px;
-    margin-top: -0em;
-    width: 32rem;
+    margin-top: -5em;
+    width: 18rem;
     transform: translateX(-4%) translateY(4.5em);
 
 }
@@ -16,15 +28,16 @@ div#bread-t {
 div#bread-b {
     content: url(https://i.ibb.co/7bGBXdT/bread-Bottom.png);
     margin-top: -0.8em;
-    width: 32rem;
+    width: 18rem;
     transform: translateX(-4%);
+    margin-bottom: 5em;
 }
 
 div#extra {
     content: url(https://i.ibb.co/h1VXYsy/Onions.png);
     max-height: 40px;
     margin-top: -0.8em;
-    width: 30rem;
+    width: 16rem;
     transform: translateX(-4%);
 }
 
@@ -32,7 +45,7 @@ div#vegetable {
     content:url(https://i.ibb.co/tDHh7hH/salad.png);
     max-height: 35px;
     margin-top: -0.8em;
-    width: 32rem;
+    width: 18rem;
     transform: translateX(-4%);
 }
 
@@ -40,7 +53,7 @@ div#cheese {
     content: url(https://i.ibb.co/7psnHXw/Cheese.png);
     max-height: 30px;
     margin-top: -0.8em;
-    width: 32rem;
+    width: 18rem;
     transform: translateX(-4%);
 }
 
@@ -48,7 +61,7 @@ div#mfe {
     content: url(https://i.ibb.co/PzDFqGL/Steak.png);
     max-height: 65px;
     margin-top: -0.8em;
-    width: 32rem;
+    width: 18rem;
     transform: translateX(-4%);
 }
 
@@ -56,6 +69,53 @@ div#sauce {
     content: url(https://i.ibb.co/8PsVF5d/sauce.png);
     max-height: 30px;
     margin-top: -0.8em;
-    width: 30rem;
+    width: 16rem;
     transform: translateX(-4%);
+}
+
+
+@media (min-width: 768px) {
+
+    div#bread-t {
+
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        width: 32rem;
+
+    
+    }
+    
+    div#bread-b {
+        width: 32rem;
+    }
+    
+    div#extra {
+      
+        width: 30rem;
+       
+    }
+    
+    div#vegetable {
+      
+        width: 32rem;
+       
+    }
+    
+    div#cheese {
+       
+        width: 32rem;
+       
+    }
+    
+    div#mfe {
+       
+        width: 32rem;
+       
+    }
+    
+    div#sauce {
+       
+        width: 30rem;
+      
+    }
 }
